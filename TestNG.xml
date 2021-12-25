@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Rest API test" >
+    <test name="ApiTest">
+        <classes>
+            <class name="ru.bulkashmak.ApiTest"/>
+        </classes>
+    </test>
+</suite>

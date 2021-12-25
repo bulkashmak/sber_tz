@@ -14,7 +14,7 @@ import java.util.Random;
 
 import static io.restassured.RestAssured.given;
 
-public class apiTest {
+public class ApiTest {
 
     User user1 = new User(
             generateRandomString()+"qwer@mail.com",
