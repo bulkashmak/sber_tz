@@ -55,7 +55,6 @@ public class apiTest {
         return new Object[0][];
     }
 
-    @Step("Отправка запроса и получение ответа")
     @Test(dataProvider = "jsonDataProvider", description = "Позитивный сценарий создания пользователя")
     void simpleTest(String jsonUserData) {
 
