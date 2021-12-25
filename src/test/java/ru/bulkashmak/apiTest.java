@@ -2,6 +2,7 @@ package ru.bulkashmak;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.qameta.allure.Step;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.json.JSONObject;
@@ -17,10 +18,10 @@ public class apiTest {
 
     User user1 = new User(
             generateRandomString()+"qwer@mail.com",
-            "Рест 6"+generateRandomString(),
+            "Rest"+generateRandomString(),
             new int[]{12},
             new int[]{36,37},
-            "Стрельба из лука, Настолки",
+            "Archery",
             "333 33 33",
             "123456789012"
     );
@@ -54,7 +55,8 @@ public class apiTest {
         return new Object[0][];
     }
 
-    @Test(dataProvider = "jsonDataProvider")
+    @Step("Отправка запроса и получение ответа")
+    @Test(dataProvider = "jsonDataProvider", description = "Позитивный сценарий создания пользователя")
     void simpleTest(String jsonUserData) {
 
         Response response = given()
@@ -68,8 +70,6 @@ public class apiTest {
                 .then().contentType(ContentType.JSON)
                 .assertThat().statusCode(200)
                 .extract().response();
-
-        System.out.println(response.asString());
 
         JSONObject jsonObject = new JSONObject(jsonUserData);
 
