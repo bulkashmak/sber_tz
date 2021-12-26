@@ -61,12 +61,7 @@ public class ApiTest extends AllureRestAssured {
                 .post()
                 .then()
                 .contentType(ContentType.JSON)
-                .assertThat().statusCode(200)
-//                .body("name", Matchers.equalTo(userData.getName()))
-//                .body("email", Matchers.equalTo(userData.getEmail()))
-//                .body("hobby", Matchers.equalTo(userData.getHobby()))
-//                .body("phone", Matchers.equalTo(userData.getPhone()))
-                ;
+                .assertThat().statusCode(200);
 
         return response;
     }
