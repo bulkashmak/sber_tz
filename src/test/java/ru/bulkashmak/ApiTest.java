@@ -1,7 +1,8 @@
 package ru.bulkashmak;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import io.qameta.allure.Step;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.hamcrest.Matchers;
@@ -10,8 +11,8 @@ import org.testng.annotations.Test;
 
 import java.util.Random;
 
-
-public class ApiTest {
+@Test
+public class ApiTest extends AllureRestAssured {
 
     static String generateRandomString() {
         int leftLimit = 97;
@@ -43,6 +44,7 @@ public class ApiTest {
         };
     }
 
+    @Step("User creation")
     @Test(dataProvider = "jsonDataProvider", description = "Позитивный сценарий создания пользователя")
     void simpleTest(User userData) {
 
@@ -52,6 +54,7 @@ public class ApiTest {
                 .contentType("application/json")
                 .body(userData)
                 .when()
+                    .filter(new AllureRestAssured())
                     .post()
                 .then()
                     .contentType(ContentType.JSON)
