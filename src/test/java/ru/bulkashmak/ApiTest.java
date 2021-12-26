@@ -5,6 +5,7 @@ import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
 import org.hamcrest.Matchers;
 import org.json.JSONObject;
 import org.testng.Assert;
@@ -48,9 +49,9 @@ public class ApiTest extends AllureRestAssured {
 
     @Step("Отправка запроса")
 //    @Test(dataProvider = "jsonDataProvider")
-    static Response userCreationRequest(User userData) {
+    static ValidatableResponse userCreationRequest(User userData) {
 
-        Response response = RestAssured.given()
+        ValidatableResponse response = RestAssured.given()
                 .baseUri("http://users.bugred.ru/tasks")
                 .basePath("/rest/createuser")
                 .contentType("application/json")
@@ -65,7 +66,7 @@ public class ApiTest extends AllureRestAssured {
 //                .body("email", Matchers.equalTo(userData.getEmail()))
 //                .body("hobby", Matchers.equalTo(userData.getHobby()))
 //                .body("phone", Matchers.equalTo(userData.getPhone()))
-                .extract().response();
+                ;
 
         return response;
     }
@@ -74,22 +75,11 @@ public class ApiTest extends AllureRestAssured {
     @Test(dataProvider = "jsonDataProvider")
     void validateResponse(User userData) {
 
-        Response response = userCreationRequest(userData);
+        ValidatableResponse response = userCreationRequest(userData);
 
-        String stringResponse = response.body().toString();
-
-        JSONObject jsonObject = new JSONObject(stringResponse);
-
-        Assert.assertEquals(jsonObject.getString("name"), userData.getName());
-        Assert.assertEquals(jsonObject.getString("email"), userData.getEmail());
-        Assert.assertEquals(jsonObject.getString("hobby"), userData.getHobby());
-        Assert.assertEquals(jsonObject.getString("phone"), userData.getPhone());
-
-
-//        .body("name", Matchers.equalTo(userData.getName()))
-//                .body("email", Matchers.equalTo(userData.getEmail()))
-//                .body("hobby", Matchers.equalTo(userData.getHobby()))
-//                .body("phone", Matchers.equalTo(userData.getPhone()))
-
+        response.body("name", Matchers.equalTo(userData.getName()));
+        response.body("email", Matchers.equalTo(userData.getEmail()));
+        response.body("hobby", Matchers.equalTo(userData.getHobby()));
+        response.body("phone", Matchers.equalTo(userData.getPhone()));
     }
 }
