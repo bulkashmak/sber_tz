@@ -4,10 +4,31 @@
   "children" : [ {
     "name" : "DESKTOP-EC017S6",
     "children" : [ {
+      "name" : "68476@DESKTOP-EC017S6.main(1)",
+      "children" : [ {
+        "name" : "Позитивный сценарий создания пользователя",
+        "uid" : "83a1be2f639f0e9a",
+        "parentUid" : "3ebcc0bd3e63f9f4d7ad85fae17af852",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640529824611,
+          "stop" : 1640529826763,
+          "duration" : 2152
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "{\"email\":\"aqlwwqwer@mail.com\",\"name\":\"Restyltux\",\"tasks\":[12],\"companies\":[36,37],\"hobby\":\"Archery\",\"phone\":\"333 33 33\",\"inn\":\"123456789012\"}" ]
+      } ],
+      "uid" : "3ebcc0bd3e63f9f4d7ad85fae17af852"
+    }, {
       "name" : "44288@DESKTOP-EC017S6.main(1)",
       "children" : [ {
         "name" : "Позитивный сценарий создания пользователя",
-        "uid" : "6196cfa779cddf07",
+        "uid" : "b750b2a6ba4b87a5",
         "parentUid" : "0c79ff3c2bcafc074e3ebd3354ec7ec5",
         "status" : "passed",
         "time" : {

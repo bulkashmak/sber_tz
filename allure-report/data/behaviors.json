@@ -3,7 +3,7 @@
   "name" : "behaviors",
   "children" : [ {
     "name" : "Позитивный сценарий создания пользователя",
-    "uid" : "6196cfa779cddf07",
+    "uid" : "b750b2a6ba4b87a5",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
@@ -18,5 +18,22 @@
     "retriesCount" : 0,
     "retriesStatusChange" : false,
     "parameters" : [ "{\"email\":\"guixoqwer@mail.com\",\"name\":\"Restxalbg\",\"tasks\":[12],\"companies\":[36,37],\"hobby\":\"Archery\",\"phone\":\"333 33 33\",\"inn\":\"123456789012\"}" ]
+  }, {
+    "name" : "Позитивный сценарий создания пользователя",
+    "uid" : "83a1be2f639f0e9a",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1640529824611,
+      "stop" : 1640529826763,
+      "duration" : 2152
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "newPassed" : false,
+    "newBroken" : false,
+    "retriesCount" : 0,
+    "retriesStatusChange" : false,
+    "parameters" : [ "{\"email\":\"aqlwwqwer@mail.com\",\"name\":\"Restyltux\",\"tasks\":[12],\"companies\":[36,37],\"hobby\":\"Archery\",\"phone\":\"333 33 33\",\"inn\":\"123456789012\"}" ]
   } ]
 }

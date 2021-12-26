@@ -1,12 +1,12 @@
 {
-  "uid" : "6196cfa779cddf07",
+  "uid" : "83a1be2f639f0e9a",
   "name" : "Позитивный сценарий создания пользователя",
   "fullName" : "ru.bulkashmak.ApiTest.simpleTest",
-  "historyId" : "56aa014587ab4a78cfc41129093a876b",
+  "historyId" : "b61c5a0aa363ccbbfef2ee296ea60069",
   "time" : {
-    "start" : 1640529208365,
-    "stop" : 1640529210319,
-    "duration" : 1954
+    "start" : 1640529824611,
+    "stop" : 1640529826763,
+    "duration" : 2152
   },
   "status" : "passed",
   "flaky" : false,
@@ -40,7 +40,7 @@
     "value" : "DESKTOP-EC017S6"
   }, {
     "name" : "thread",
-    "value" : "44288@DESKTOP-EC017S6.main(1)"
+    "value" : "68476@DESKTOP-EC017S6.main(1)"
   }, {
     "name" : "framework",
     "value" : "testng"
@@ -53,7 +53,7 @@
   } ],
   "parameters" : [ {
     "name" : "arg0",
-    "value" : "{\"email\":\"guixoqwer@mail.com\",\"name\":\"Restxalbg\",\"tasks\":[12],\"companies\":[36,37],\"hobby\":\"Archery\",\"phone\":\"333 33 33\",\"inn\":\"123456789012\"}"
+    "value" : "{\"email\":\"aqlwwqwer@mail.com\",\"name\":\"Restyltux\",\"tasks\":[12],\"companies\":[36,37],\"hobby\":\"Archery\",\"phone\":\"333 33 33\",\"inn\":\"123456789012\"}"
   } ],
   "links" : [ ],
   "hidden" : false,
@@ -64,6 +64,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "6196cfa779cddf07.json",
-  "parameterValues" : [ "{\"email\":\"guixoqwer@mail.com\",\"name\":\"Restxalbg\",\"tasks\":[12],\"companies\":[36,37],\"hobby\":\"Archery\",\"phone\":\"333 33 33\",\"inn\":\"123456789012\"}" ]
+  "source" : "83a1be2f639f0e9a.json",
+  "parameterValues" : [ "{\"email\":\"aqlwwqwer@mail.com\",\"name\":\"Restyltux\",\"tasks\":[12],\"companies\":[36,37],\"hobby\":\"Archery\",\"phone\":\"333 33 33\",\"inn\":\"123456789012\"}" ]
 }

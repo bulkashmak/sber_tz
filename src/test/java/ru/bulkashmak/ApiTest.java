@@ -2,16 +2,14 @@ package ru.bulkashmak;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import org.json.JSONObject;
-import org.testng.Assert;
+import org.hamcrest.Matchers;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.Random;
 
-import static io.restassured.RestAssured.given;
 
 public class ApiTest {
 
@@ -57,24 +55,19 @@ public class ApiTest {
     @Test(dataProvider = "jsonDataProvider", description = "Позитивный сценарий создания пользователя")
     void simpleTest(String jsonUserData) {
 
-        Response response = given()
+        RestAssured.given()
                 .baseUri("http://users.bugred.ru/tasks")
                 .basePath("/rest/createuser")
                 .contentType("application/json")
                 .body(jsonUserData)
-
-                .when().post()
-
-                .then().contentType(ContentType.JSON)
-                .assertThat().statusCode(200)
-                .extract().response();
-
-
-        JSONObject jsonObject = new JSONObject(jsonUserData);
-
-        Assert.assertEquals(jsonObject.getString("name"), user1.getName());
-        Assert.assertEquals(jsonObject.getString("email"), user1.getEmail());
-        Assert.assertEquals(jsonObject.getString("hobby"), user1.getHobby());
-        Assert.assertEquals(jsonObject.getString("phone"), user1.getPhone());
+                .when()
+                    .post()
+                .then()
+                    .contentType(ContentType.JSON)
+                    .assertThat().statusCode(200)
+                    .body("name", Matchers.equalTo(user1.getName()))
+                    .body("email", Matchers.equalTo(user1.getEmail()))
+                    .body("hobby", Matchers.equalTo(user1.getHobby()))
+                    .body("phone", Matchers.equalTo(user1.getPhone()));
     }
 }

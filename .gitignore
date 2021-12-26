@@ -29,5 +29,6 @@ hs_err_pid*
 # Maven output
 target
 allure-results
+allure-report
 extent-reports
 log4j
