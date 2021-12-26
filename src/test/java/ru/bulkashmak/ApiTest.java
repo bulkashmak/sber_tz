@@ -36,20 +36,14 @@ public class ApiTest {
     }
 
     @DataProvider(name = "jsonDataProvider")
-    private Object[][] userCreation() {
+    private Object[][] userCreation() throws JsonProcessingException {
 
         ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            String userData = objectMapper.writeValueAsString(user1);
-            return new Object[][] {
-                    new Object[] {
-                            userData
-                    }
-            };
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        return new Object[0][];
+        String userData = objectMapper.writeValueAsString(user1);
+        return new Object[][] {
+            new Object[] {userData}
+        };
+
     }
 
     @Test(dataProvider = "jsonDataProvider", description = "Позитивный сценарий создания пользователя")
