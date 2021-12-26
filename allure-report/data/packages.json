@@ -1,0 +1,26 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "ru.bulkashmak.ApiTest",
+    "children" : [ {
+      "name" : "simpleTest",
+      "uid" : "6196cfa779cddf07",
+      "parentUid" : "bb6d9f320843cf2f69f320aaf3b26020",
+      "status" : "passed",
+      "time" : {
+        "start" : 1640529208365,
+        "stop" : 1640529210319,
+        "duration" : 1954
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "{\"email\":\"guixoqwer@mail.com\",\"name\":\"Restxalbg\",\"tasks\":[12],\"companies\":[36,37],\"hobby\":\"Archery\",\"phone\":\"333 33 33\",\"inn\":\"123456789012\"}" ]
+    } ],
+    "uid" : "ru.bulkashmak.ApiTest"
+  } ]
+}

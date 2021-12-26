@@ -1,0 +1,30 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-EC017S6",
+    "children" : [ {
+      "name" : "44288@DESKTOP-EC017S6.main(1)",
+      "children" : [ {
+        "name" : "Позитивный сценарий создания пользователя",
+        "uid" : "6196cfa779cddf07",
+        "parentUid" : "0c79ff3c2bcafc074e3ebd3354ec7ec5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640529208365,
+          "stop" : 1640529210319,
+          "duration" : 1954
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "{\"email\":\"guixoqwer@mail.com\",\"name\":\"Restxalbg\",\"tasks\":[12],\"companies\":[36,37],\"hobby\":\"Archery\",\"phone\":\"333 33 33\",\"inn\":\"123456789012\"}" ]
+      } ],
+      "uid" : "0c79ff3c2bcafc074e3ebd3354ec7ec5"
+    } ],
+    "uid" : "d7d1732f98c8eaee1b1f36cebbe362f5"
+  } ]
+}

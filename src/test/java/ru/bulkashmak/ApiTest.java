@@ -2,7 +2,6 @@ package ru.bulkashmak;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.qameta.allure.Step;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.json.JSONObject;
@@ -69,6 +68,7 @@ public class ApiTest {
                 .then().contentType(ContentType.JSON)
                 .assertThat().statusCode(200)
                 .extract().response();
+
 
         JSONObject jsonObject = new JSONObject(jsonUserData);
 
