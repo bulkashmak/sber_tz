@@ -65,9 +65,9 @@ public class ApiTest extends AllureRestAssured {
     @Step("Валидация ответа")
     static void validateResponse(ValidatableResponse response, User userData) {
 
-        response.body("name", Matchers.equalTo(userData.getName()));
-        response.body("email", Matchers.equalTo(userData.getEmail()));
-        response.body("hobby", Matchers.equalTo(userData.getHobby()));
-        response.body("phone", Matchers.equalTo(userData.getPhone()));
+        response.body("name", Matchers.equalTo(userData.getName()))
+                .body("email", Matchers.equalTo(userData.getEmail()))
+                .body("hobby", Matchers.equalTo(userData.getHobby()))
+                .body("phone", Matchers.equalTo(userData.getPhone()));
     }
 }
