@@ -19,6 +19,7 @@
     <allure-testng-version>2.17.2</allure-testng-version>
     <extentreports-version>5.0.8</extentreports-version>
     <maven-surefire-plugin-version>3.0.0-M5</maven-surefire-plugin-version>
+    <aspectj.version>1.9.7</aspectj.version>
   </properties>
 
   <dependencies>
@@ -33,11 +34,6 @@
       <artifactId>rest-assured</artifactId>
       <version>4.4.0</version>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.json</groupId>
-      <artifactId>json</artifactId>
-      <version>20211205</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
@@ -55,14 +51,14 @@
       <version>2.17.2</version>
     </dependency>
     <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>${aspectj.version}</version>
+    </dependency>
+    <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>1.7.32</version>
-    </dependency>
-    <dependency>
-      <groupId>org.aspectj</groupId>
-      <artifactId>aspectjweaver</artifactId>
-      <version>1.9.7</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>

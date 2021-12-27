@@ -4,17 +4,13 @@ import io.qameta.allure.Step;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import org.hamcrest.Matchers;
-import org.json.JSONObject;
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.Random;
 
-@Test(description = "Позитивный сценарий создания пользователя")
 public class ApiTest extends AllureRestAssured {
 
     static String generateRandomString() {
@@ -48,8 +44,8 @@ public class ApiTest extends AllureRestAssured {
     }
 
     @Step("Отправка запроса")
-//    @Test(dataProvider = "jsonDataProvider")
-    static ValidatableResponse userCreationRequest(User userData) {
+    @Test(dataProvider = "jsonDataProvider", description = "Позитивный сценарий создания пользователя")
+    void userCreationRequest(User userData) {
 
         ValidatableResponse response = RestAssured.given()
                 .baseUri("http://users.bugred.ru/tasks")
@@ -63,14 +59,11 @@ public class ApiTest extends AllureRestAssured {
                 .contentType(ContentType.JSON)
                 .assertThat().statusCode(200);
 
-        return response;
+        validateResponse(response, userData);
     }
 
-    @Step
-    @Test(dataProvider = "jsonDataProvider")
-    void validateResponse(User userData) {
-
-        ValidatableResponse response = userCreationRequest(userData);
+    @Step("Валидация ответа")
+    static void validateResponse(ValidatableResponse response, User userData) {
 
         response.body("name", Matchers.equalTo(userData.getName()));
         response.body("email", Matchers.equalTo(userData.getEmail()));
